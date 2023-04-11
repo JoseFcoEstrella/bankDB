@@ -5,6 +5,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize("bankDB", "postgres", "postgres", {
   host: "localhost",
   dialect: "postgres",
+  logging: false
 });
 
 // Define the clients table

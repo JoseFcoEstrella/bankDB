@@ -1,4 +1,7 @@
-const Client = require('./client');
-const Loan = require('./loan');
+const client = require('./client');
+const loan = require('./loan');
 
-module.exports = {Client, Loan};
+module.exports = (app) => {
+  app.use(client);
+  app.use(loan);
+};

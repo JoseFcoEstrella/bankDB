@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const { Loan } = require('./data/model');
+const { Loan } = require('../db/model');
 
 // Get all loans
 router.get("/loans", async (req, res) => {
