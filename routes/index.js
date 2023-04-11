@@ -1,9 +1,4 @@
-var express = require('express');
-var router = express.Router();
+const Client = require('./client');
+const Loan = require('./loan');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
+module.exports = {Client, Loan};

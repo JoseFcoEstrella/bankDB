@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const { Client } = require('./data/model');
 
 // GET all client
 router.get('/clients', async (req, res) => {
