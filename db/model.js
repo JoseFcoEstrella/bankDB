@@ -127,6 +127,7 @@ const Loan = sequelize.define("loans", {
 Client.hasMany(Loan, { foreignKey: "client_id" });
 Loan.belongsTo(Client, { foreignKey: "client_id" });
 
+// Define the DB synchronized
 sequelize.sync()
   .then(() => {
     console.log('Database synchronized');
@@ -135,5 +136,4 @@ sequelize.sync()
     console.error('Error synchronizing database:', error);
   });
   
-// Export the models
 module.exports = { Client, Loan };

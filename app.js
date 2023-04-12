@@ -3,9 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { Client, Loan } = require('./db/model');
 const routes = require('./routes')
-
 
 // Set up middleware to parse request body
 app.use(bodyParser.json());
