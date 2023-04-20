@@ -34,9 +34,14 @@ router.put('/clients/:id', async (req, res) => {
       return res.status(404).send({ message: 'Client not found' });
     }
 
-    client.name = req.body.name || client.name;
+    client.first_name = req.body.first_name || client.first_name;
+    client.last_name = req.body.last_name || client.last_name;
     client.email = req.body.email || client.email;
     client.phone = req.body.phone || client.phone;
+    client.address = req.body.address || client.address;
+    client.city = req.body.city || client.city;
+    client.state = req.body.state || client.state;
+    client.zip_code = req.body.zip_code || client.zip_code;
 
     const updatedClient = await client.save();
     res.send(updatedClient);
