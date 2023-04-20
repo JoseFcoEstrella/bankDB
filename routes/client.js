@@ -26,6 +26,25 @@ router.get('/clients/:id', async (req, res) => {
   }
 });
 
+// Update cliente by id
+router.put('/clients/:id', async (req, res) => {
+  try {
+    const client = await Client.findById(req.params.id);
+    if (!client) {
+      return res.status(404).send({ message: 'Client not found' });
+    }
+
+    client.name = req.body.name || client.name;
+    client.email = req.body.email || client.email;
+    client.phone = req.body.phone || client.phone;
+
+    const updatedClient = await client.save();
+    res.send(updatedClient);
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+});
+
 // create a client
 router.post('/clients', async (req, res) => {
   try {
